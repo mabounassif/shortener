@@ -3,6 +3,7 @@ class Shortener::ShortenedUrl < ActiveRecord::Base
   URL_PROTOCOL_HTTP = "http://"
   REGEX_LINK_HAS_PROTOCOL = Regexp.new('\Ahttp:\/\/|\Ahttps:\/\/', Regexp::IGNORECASE)
 
+  attr_accessible :url
   validates :url, :presence => true
 
   # allows the shortened link to be associated with a user
